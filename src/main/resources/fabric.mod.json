@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "programmingproject",
   "version": "${version}",
 
   "name": "Final project for Programming I",
@@ -14,7 +14,7 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/programmingproject/icon.png",
 
   "environment": "*",
   "entrypoints": {
