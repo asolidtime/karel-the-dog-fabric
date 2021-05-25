@@ -3,14 +3,14 @@
   "id": "programmingproject",
   "version": "${version}",
 
-  "name": "Final project for Programming I",
-  "description": "name",
+  "name": "Karel The Dog",
+  "description": "fun robot dog, brought to Minecraft for your enjoyment",
   "authors": [
     "asolidtime"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/asolidtime/karel-the-dog-fabric",
+    "sources": "https://github.com/asolidtime/karel-the-dog-fabric"
   },
 
   "license": "CC0-1.0",
