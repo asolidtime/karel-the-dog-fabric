@@ -8,18 +8,18 @@
     ],
     "key":
     {
-        "x":
+        "a":
         {
             "item": "minecraft:emerald"
         },
-        "a":
+        "x":
         {
-            "item": "programmingproject:karelium_ingot",
+            "item": "programmingproject:karelium_ingot"
         }
     },
     "result":
     {
         "item": "programmingproject:karel_egg",
-        "count": 1,
+        "count": 1
     }
 }
