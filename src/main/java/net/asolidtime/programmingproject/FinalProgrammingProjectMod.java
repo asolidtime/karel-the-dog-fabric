@@ -24,7 +24,7 @@ import net.minecraft.world.gen.feature.OreFeatureConfig;
 
 public class FinalProgrammingProjectMod implements ModInitializer {
 	public static final KareliumIngotItem KAREL_INGOT_ITEM = new KareliumIngotItem(new FabricItemSettings().group(ItemGroup.MISC));
-	public static final KarelEggItem KAREL_EGG_ITEM = new KarelEggItem(new FabricItemSettings().group(ItemGroup.MISC));
+	public static final KarelEggItem KAREL_EGG_ITEM = new KarelEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
 	public static final KareliumOreBlock KAREL_ORE_BLOCK = new KareliumOreBlock(FabricBlockSettings.of(Material.METAL).strength(4.0f));
 	private static final ConfiguredFeature<?, ?> KAREL_ORE_OVERWORLD = Feature.ORE
 			.configure(new OreFeatureConfig(

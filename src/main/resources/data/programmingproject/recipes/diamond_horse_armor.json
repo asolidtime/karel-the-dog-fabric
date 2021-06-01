@@ -7,14 +7,14 @@
   ],
   "key": {
     "K": {
-      "tag": "programmingproject:karelium_ingot"
+      "tag": "minecraft:iron_ingot"
     },
     "I": {
       "item": "minecraft:iron_block"
     }
   },
   "result": {
-    "item": "programmingproject:karel_egg",
-    "count": 4
+    "item": "minecraft:diamond_horse_armor",
+    "count": 1
   }
 }

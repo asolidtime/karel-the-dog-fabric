@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "programmingproject:item/karel_egg"
+    "layer0": "programmingproject:item/karelium_ore"
   }
 }
