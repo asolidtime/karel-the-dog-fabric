@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "xxa",
+        "x x",
+        "xxx"
+    ],
+    "key":
+    {
+        "x":
+        {
+            "item": "minecraft:emerald"
+        },
+        "a":
+        {
+            "item": "programmingproject:karelium_ingot",
+        }
+    },
+    "result":
+    {
+        "item": "programmingproject:karel_egg",
+        "count": 1,
+    }
+}
