@@ -2,5 +2,6 @@
   "block.programmingproject.karelium_ore": "Karelium Ore",
   "item.programmingproject.karelium_ingot": "Karelium Ingot",
   "item.programmingproject.karel_egg": "Karel Egg",
-  "block.programmingproject.karelium_block": "Block of Karelium"
+  "block.programmingproject.karelium_block": "Block of Karelium",
+  "entity.programmingproject.karel": "Karel"
 }

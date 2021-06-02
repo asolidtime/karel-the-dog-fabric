@@ -7,8 +7,11 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -24,7 +27,7 @@ public class KarelItems {
     public static void registerItems() {
         // add items and ConfiguredFeatures
         final KareliumIngotItem KAREL_INGOT_ITEM = new KareliumIngotItem(new FabricItemSettings().group(ItemGroup.MISC));
-        final KarelEggItem KAREL_EGG_ITEM = new KarelEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
+        final SpawnEggItem KAREL_EGG_ITEM = new SpawnEggItem(EntityType.CHICKEN, 0xfcfc00, 0xfc9700, new Item.Settings().group(ItemGroup.MISC));
         final KareliumOreBlock KAREL_ORE_BLOCK = new KareliumOreBlock(FabricBlockSettings.of(Material.METAL).strength(4.0f));
         final Block KAREL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f));
         final ConfiguredFeature<?, ?> KAREL_ORE_OVERWORLD = Feature.ORE
