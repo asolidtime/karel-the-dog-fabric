@@ -26,9 +26,9 @@ import net.minecraft.world.gen.feature.OreFeatureConfig;
 public class KarelItems {
     public static void registerItems() {
         // add items and ConfiguredFeatures
-        final KareliumIngotItem KAREL_INGOT_ITEM = new KareliumIngotItem(new FabricItemSettings().group(ItemGroup.MISC));
+        final Item KAREL_INGOT_ITEM = new Item(new FabricItemSettings().group(ItemGroup.MISC));
         final SpawnEggItem KAREL_EGG_ITEM = new SpawnEggItem(EntityType.CHICKEN, 0xfcfc00, 0xfc9700, new Item.Settings().group(ItemGroup.MISC));
-        final KareliumOreBlock KAREL_ORE_BLOCK = new KareliumOreBlock(FabricBlockSettings.of(Material.METAL).strength(4.0f));
+        final Block KAREL_ORE_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f));
         final Block KAREL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f));
         final ConfiguredFeature<?, ?> KAREL_ORE_OVERWORLD = Feature.ORE
                 .configure(new OreFeatureConfig(
