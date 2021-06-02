@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "programmingproject",
-  "version": "${version}",
+  "version": "0.8.0",
 
   "name": "Karel The Dog",
   "description": "fun robot dog, brought to Minecraft for your enjoyment",
