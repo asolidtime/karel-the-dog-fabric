@@ -1,17 +1,18 @@
 package net.asolidtime.programmingproject.entities;
 
-import net.asolidtime.programmingproject.FinalProgrammingProjectMod;
+import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
-import net.minecraft.client.render.entity.MobEntityRenderer;
-import net.minecraft.util.Identifier;
+import software.bernie.geckolib3.model.AnimatedGeoModel;
+import software.bernie.geckolib3.renderer.geo.GeoEntityRenderer;
 
-public class KarelEntityRenderer extends MobEntityRenderer<KarelEntity, KarelEntityModel> {
-    public KarelEntityRenderer(EntityRenderDispatcher entityRenderDispatcher) {
-        super(entityRenderDispatcher, new KarelEntityModel(), 0.5f);
+public class KarelEntityRenderer extends GeoEntityRenderer<KarelEntity> {
+
+
+    public KarelEntityRenderer(EntityRenderDispatcher renderManager, AnimatedGeoModel<KarelEntity> modelProvider) {
+        super(renderManager, modelProvider);
     }
 
-    @Override
-    public Identifier getTexture(KarelEntity entity) {
-        return new Identifier(FinalProgrammingProjectMod.MOD_ID, "textures/entity/doesntexist/karel.png");
+    public KarelEntityRenderer(EntityRenderDispatcher dispatcher, EntityRendererRegistry.Context ctx) {
+        super(dispatcher, new KarelEntityModel());
     }
 }
