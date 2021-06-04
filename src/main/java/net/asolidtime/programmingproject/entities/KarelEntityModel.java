@@ -109,16 +109,16 @@ public class KarelEntityModel extends AnimatedGeoModel<KarelEntity> {
 
     @Override
     public Identifier getModelLocation(KarelEntity object) {
-        return new Identifier(FinalProgrammingProjectMod.MOD_ID, "geo/karel/KarelEntityModel.geo.json");
+        return new Identifier(FinalProgrammingProjectMod.MOD_ID, "geo/karel/karel.geo");
     }
 
     @Override
     public Identifier getTextureLocation(KarelEntity object) {
-        return new Identifier(FinalProgrammingProjectMod.MOD_ID, "geo/karel/KarelEntityModel.png");
+        return new Identifier(FinalProgrammingProjectMod.MOD_ID, "geo/karel/karel.png");
     }
 
     @Override
     public Identifier getAnimationFileLocation(KarelEntity animatable) {
-        return new Identifier(FinalProgrammingProjectMod.MOD_ID, "geo/karel/KarelEntityModel.animation.json");
+        return new Identifier(FinalProgrammingProjectMod.MOD_ID, "geo/karel/karel.animation");
     }
 }
