@@ -5,6 +5,9 @@ build/
 out/
 classes/
 
+#idk how to do this properly
+libs/
+
 # eclipse
 
 *.launch
