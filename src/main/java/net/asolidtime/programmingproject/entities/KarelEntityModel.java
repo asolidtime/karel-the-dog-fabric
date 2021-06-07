@@ -17,7 +17,8 @@ public class KarelEntityModel extends AnimatedGeoModel<KarelEntity> {
     }
 
     @Override
-    public Identifier getAnimationFileLocation(KarelEntity animatable) {
+    public Identifier getAnimationFileLocation(KarelEntity object) {
         return new Identifier(FinalProgrammingProjectMod.MOD_ID, "animations/karel.animation.json");
+
     }
 }

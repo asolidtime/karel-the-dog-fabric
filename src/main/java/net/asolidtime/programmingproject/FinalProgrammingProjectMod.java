@@ -19,7 +19,11 @@ public class FinalProgrammingProjectMod implements ModInitializer {
 	public static final EntityType<KarelEntity> KAREL = Registry.register(
 			Registry.ENTITY_TYPE,
 			new Identifier(MOD_ID, "karel"),
-			FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, KarelEntity::new).dimensions(EntityDimensions.fixed(1.25f, 1.25f)).build()
+			FabricEntityTypeBuilder
+					.create(SpawnGroup.CREATURE, KarelEntity::new)
+					.dimensions(EntityDimensions.fixed(1.25f, 1.25f))
+					.fireImmune()
+					.build()
 	);
 	@Override
 	public void onInitialize() {
