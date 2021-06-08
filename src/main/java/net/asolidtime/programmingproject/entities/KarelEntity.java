@@ -1,5 +1,6 @@
 package net.asolidtime.programmingproject.entities;
 
+import net.asolidtime.programmingproject.FinalProgrammingProjectMod;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.Durations;
@@ -42,7 +43,17 @@ public class KarelEntity extends TameableEntity implements Angerable, IAnimatabl
     }
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
     {
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.karel.tailwag",true));
+
+        if (this.isSitting()) {
+            FinalProgrammingProjectMod.LOGGER.info("Sitting!");
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.karel.sit", false));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.karel.tailwag",false));
+
+        } else {
+            FinalProgrammingProjectMod.LOGGER.info("Not sitting!");
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.karel.tailwag",true));
+
+        }
         return PlayState.CONTINUE;
     }
 
@@ -83,6 +94,7 @@ public class KarelEntity extends TameableEntity implements Angerable, IAnimatabl
         this.targetUuid = uuid;
     }
 
+
     @Override
     public void chooseRandomAngerTime() {
         this.setAngerTime(ANGER_TIME_RANGE.choose(this.random));
@@ -121,7 +133,7 @@ public class KarelEntity extends TameableEntity implements Angerable, IAnimatabl
                     return ActionResult.SUCCESS;
                 }
                 ActionResult actionResult = super.interactMob(player, hand);
-                if (!actionResult.isAccepted() && this.isOwner(player)) {
+                if (this.isOwner(player)) {
                     this.setSitting(!this.isSitting());
                     this.jumping = false;
                     this.navigation.stop();
@@ -134,7 +146,7 @@ public class KarelEntity extends TameableEntity implements Angerable, IAnimatabl
                     itemStack.decrement(1);
                 }
 
-
+                this.world.sendEntityStatus(this, (byte)7);
                 this.setOwner(player);
                 this.navigation.stop();
                 this.setTarget((LivingEntity)null);

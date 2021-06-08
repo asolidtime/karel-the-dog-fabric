@@ -194,6 +194,52 @@
 					}
 				}
 			}
+		},
+		"animation.karel.sit": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 1,
+			"bones": {
+				"tail": {
+					"rotation": [0, 0, 0],
+					"position": {
+						"0.0": [0, 0, 1],
+						"1.0": [0, -8, 4]
+					}
+				},
+				"backbody": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.0": [-37.5, 0, 0]
+					}
+				},
+				"legs": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.0": [-40, 0, 0]
+					}
+				},
+				"frontbody": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.0": [-20, 0, 0]
+					}
+				},
+				"head": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.0": [-7.5, 0, 0]
+
+					},
+					"position": {
+						"0.0": [0, 1, 0],
+						"1.0": [0, 1, 5]
+					}
+				},
+				"ears": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, 0]
+				}
+			}
 		}
 	},
 	"geckolib_format_version": 2
