@@ -15,7 +15,7 @@ import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.math.IntRange;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -34,7 +34,7 @@ public class KarelEntity extends TameableEntity implements Angerable, IAnimatabl
     private AnimationFactory factory = new AnimationFactory(this);
     private UUID targetUuid;
     private int angerTime;
-    private static final IntRange ANGER_TIME_RANGE = Durations.betweenSeconds(15, 20);
+    private static final UniformIntProvider ANGER_TIME_RANGE = Durations.betweenSeconds(12, 20);
     private TameableEntity tameable;
 
     public KarelEntity(EntityType<? extends TameableEntity> entityType, World world) {
@@ -97,14 +97,14 @@ public class KarelEntity extends TameableEntity implements Angerable, IAnimatabl
 
     @Override
     public void chooseRandomAngerTime() {
-        this.setAngerTime(ANGER_TIME_RANGE.choose(this.random));
+        this.setAngerTime(ANGER_TIME_RANGE.get(this.random));
     }
 
     @Override
     protected void initGoals() {
         super.initGoals();
         this.goalSelector.add(7, new LookAroundGoal(this));
-        this.goalSelector.add(5, new WanderAroundGoal(this, 2.0F));
+        this.goalSelector.add(5, new WanderAroundGoal(this, 0.8F));
         this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
         this.goalSelector.add(5, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
         this.goalSelector.add(8, new WanderAroundFarGoal(this, 1.0D));
@@ -124,7 +124,7 @@ public class KarelEntity extends TameableEntity implements Angerable, IAnimatabl
         } else {
             if (this.isTamed()) {
                 if (this.getHealth() < this.getMaxHealth()) {
-                    if (!player.abilities.creativeMode) {
+                    if (!player.getAbilities().creativeMode) {
                         itemStack.decrement(1);
                     }
                     if (item == Items.EMERALD) {
@@ -142,7 +142,7 @@ public class KarelEntity extends TameableEntity implements Angerable, IAnimatabl
                 }
                 return actionResult;
             } else if (item == Items.EMERALD && !this.hasAngerTime()) {
-                if (!player.abilities.creativeMode) {
+                if (!player.getAbilities().creativeMode) {
                     itemStack.decrement(1);
                 }
 
