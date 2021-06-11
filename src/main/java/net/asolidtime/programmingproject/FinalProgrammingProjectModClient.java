@@ -15,8 +15,7 @@ public class FinalProgrammingProjectModClient implements ClientModInitializer {
          *
          * Entity Renderers can also manipulate the model before it renders based on entity context (EndermanEntityRenderer#render).
          */
-        EntityRendererRegistry.INSTANCE.register(FinalProgrammingProjectMod.KAREL,
-                (entityRenderDispatcher, context) -> new KarelEntityRenderer(entityRenderDispatcher));
+                EntityRendererRegistry.INSTANCE.register(FinalProgrammingProjectMod.KAREL, (context) -> new KarelEntityRenderer(context));
 
     }
 }
